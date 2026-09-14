@@ -26,7 +26,11 @@ interface PreviewContentProps {
 }
 export const PreviewContent = memo(
   forwardRef<HTMLDivElement, PreviewContentProps>(
-    ({ state, selectedIcon, dropShadow, supportsFilter, noiseFilter, blurFilter }, ref) => {
+    (
+      { state, selectedIcon: requestedIcon, dropShadow, supportsFilter, noiseFilter, blurFilter },
+      ref,
+    ) => {
+      const [selectedIcon, setSelectedIcon] = useState(requestedIcon);
       const SelectedIconComponent = selectedIcon?.icon;
       const lucideWrapRef = useRef<HTMLDivElement>(null);
       const motionEnabled = state.motion?.enabled === true;
@@ -39,14 +43,32 @@ export const PreviewContent = memo(
       const iterationCount = (state.motion?.loop ?? true) ? "infinite" : "1";
       const [svgData, setSvgData] = useState<{ content: string; viewBox: string } | null>(null);
       useEffect(() => {
-        if (selectedIcon?.url) {
-          fetchSvgInnerContentRaw(selectedIcon.url)
-            .then(setSvgData)
-            .catch(() => setSvgData(null));
-        } else {
+        if (!requestedIcon) {
+          setSelectedIcon(null);
           setSvgData(null);
+          return;
         }
-      }, [selectedIcon?.url]);
+        if (!requestedIcon.url) {
+          setSelectedIcon(requestedIcon);
+          setSvgData(null);
+          return;
+        }
+        let cancelled = false;
+        fetchSvgInnerContentRaw(requestedIcon.url)
+          .then((data) => {
+            if (cancelled) return;
+            setSvgData(data);
+            setSelectedIcon(requestedIcon);
+          })
+          .catch(() => {
+            if (cancelled) return;
+            setSvgData(null);
+            setSelectedIcon(requestedIcon);
+          });
+        return () => {
+          cancelled = true;
+        };
+      }, [requestedIcon]);
       const isDrawAnim = motionEnabled && (animationType === "draw" || animationType === "stroke");
       const effectiveIconType =
         selectedIcon?.category === "custom" ? "normal" : (selectedIcon?.iconType ?? state.iconType);
