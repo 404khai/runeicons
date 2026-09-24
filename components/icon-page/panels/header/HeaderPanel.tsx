@@ -97,7 +97,10 @@ export function HeaderPanel({ className }: HeaderPanelProps) {
               className="h-8 gap-2 border-border bg-white px-3 text-[11px] font-medium opacity-100 shadow-none dark:bg-[#1a1a1a]"
               aria-label="GitHub"
             >
-              <Github className="size-3.5" /> {displayCount}
+              <Github className="size-3.5" />{" "}
+              <span className="inline-block min-w-[3ch] text-left tabular-nums">
+                {displayCount}
+              </span>
             </Button>
           </Link>
           {/* <Link href="/sponsor" rel="noopener noreferrer">
