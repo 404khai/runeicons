@@ -9,18 +9,18 @@ import 'package:runeicons/runeicons.dart';
 
 void main() {
   test('exports the complete generated catalog', () {
-    expect(RuneIcons.all, hasLength(354));
+    expect(RuneIcons.all, hasLength(357));
     expect(
       RuneIcons.all.where((icon) => icon.supports(RuneIconStyle.normal)),
-      hasLength(217),
+      hasLength(220),
     );
     expect(
       RuneIcons.all.where((icon) => icon.supports(RuneIconStyle.duotone)),
-      hasLength(215),
+      hasLength(218),
     );
     expect(
       RuneIcons.all.where((icon) => icon.supports(RuneIconStyle.fill)),
-      hasLength(126),
+      hasLength(129),
     );
     expect(
       RuneIcons.all.where((icon) => icon.supports(RuneIconStyle.pixelated)),

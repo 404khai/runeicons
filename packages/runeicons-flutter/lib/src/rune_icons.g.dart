@@ -578,6 +578,20 @@ abstract final class RuneIcons {
     },
   );
 
+  /// Book Bookmark (`documents-book-bookmark`).
+  static const RuneIconData bookBookmark = RuneIconData(
+    id: "documents-book-bookmark",
+    name: "Book Bookmark",
+    category: "files",
+    tags: ["files", "book", "bookmark"],
+    defaultStyle: RuneIconStyle.normal,
+    assetPaths: {
+      RuneIconStyle.normal: "assets/normal/documents-book-bookmark.svg",
+      RuneIconStyle.duotone: "assets/duotone/documents-book-bookmark.svg",
+      RuneIconStyle.fill: "assets/fill/documents-book-bookmark.svg",
+    },
+  );
+
   /// Box (`documents-box`).
   static const RuneIconData box = RuneIconData(
     id: "documents-box",
@@ -899,6 +913,20 @@ abstract final class RuneIcons {
       RuneIconStyle.duotone: "assets/duotone/documents-inbox.svg",
       RuneIconStyle.fill: "assets/fill/documents-inbox.svg",
       RuneIconStyle.pixelated: "assets/pixelated/documents-inbox.svg",
+    },
+  );
+
+  /// Library (`documents-library`).
+  static const RuneIconData libraryIcon = RuneIconData(
+    id: "documents-library",
+    name: "Library",
+    category: "files",
+    tags: ["files", "library"],
+    defaultStyle: RuneIconStyle.normal,
+    assetPaths: {
+      RuneIconStyle.normal: "assets/normal/documents-library.svg",
+      RuneIconStyle.duotone: "assets/duotone/documents-library.svg",
+      RuneIconStyle.fill: "assets/fill/documents-library.svg",
     },
   );
 
@@ -2441,6 +2469,20 @@ abstract final class RuneIcons {
       RuneIconStyle.normal: "assets/normal/other-globe.svg",
       RuneIconStyle.duotone: "assets/duotone/other-globe.svg",
       RuneIconStyle.pixelated: "assets/pixelated/other-globe.svg",
+    },
+  );
+
+  /// Puzzle (`other-puzzle`).
+  static const RuneIconData puzzle = RuneIconData(
+    id: "other-puzzle",
+    name: "Puzzle",
+    category: "misc",
+    tags: ["misc", "puzzle"],
+    defaultStyle: RuneIconStyle.normal,
+    assetPaths: {
+      RuneIconStyle.normal: "assets/normal/other-puzzle.svg",
+      RuneIconStyle.duotone: "assets/duotone/other-puzzle.svg",
+      RuneIconStyle.fill: "assets/fill/other-puzzle.svg",
     },
   );
 
@@ -4866,6 +4908,7 @@ abstract final class RuneIcons {
     terminal,
     ungroup,
     archive,
+    bookBookmark,
     box,
     clipboard,
     clipboardList,
@@ -4888,6 +4931,7 @@ abstract final class RuneIcons {
     folders,
     importIcon,
     inbox,
+    libraryIcon,
     paperclip,
     save,
     batteryFull,
@@ -4993,6 +5037,7 @@ abstract final class RuneIcons {
     wind,
     apple,
     globe,
+    puzzle,
     wifi,
     wifiLow,
     zap,
@@ -5224,6 +5269,7 @@ abstract final class RuneIcons {
     "code-terminal": terminal,
     "code-ungroup": ungroup,
     "documents-archive": archive,
+    "documents-book-bookmark": bookBookmark,
     "documents-box": box,
     "documents-clipboard": clipboard,
     "documents-clipboard-list": clipboardList,
@@ -5246,6 +5292,7 @@ abstract final class RuneIcons {
     "documents-folders": folders,
     "documents-import": importIcon,
     "documents-inbox": inbox,
+    "documents-library": libraryIcon,
     "documents-paperclip": paperclip,
     "documents-save": save,
     "gadgets-battery-full": batteryFull,
@@ -5351,6 +5398,7 @@ abstract final class RuneIcons {
     "nature-wind": wind,
     "other-apple": apple,
     "other-globe": globe,
+    "other-puzzle": puzzle,
     "other-wifi": wifi,
     "other-wifi-low": wifiLow,
     "other-zap": zap,
