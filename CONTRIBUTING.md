@@ -113,3 +113,5 @@ Step-by-step:
    ```
 
 5. **Push and open a pull request** against the `main` branch. Please follow the [Code of Conduct](CODE_OF_CONDUCT.md) in all interactions.
+
+> No need to ask for the issue to be assigned. If an issue is open, just start and open a PR. It gets merged after review.
