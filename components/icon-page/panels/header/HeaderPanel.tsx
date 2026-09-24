@@ -1,5 +1,4 @@
 "use client";
-import { useEffect, useState } from "react";
 
 import { useTheme } from "next-themes";
 import Link from "next/link";
@@ -20,14 +19,10 @@ interface HeaderPanelProps {
 }
 export function HeaderPanel({ className }: HeaderPanelProps) {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
   const displayCount = useGitHubStars();
   const isEditorPage = pathname === "/editor";
-  useEffect(() => {
-    setMounted(true);
-  }, []);
   return (
     <header
       className={cn(
