@@ -57,7 +57,8 @@ const Navbar = ({
   const githubStars = useGitHubStars();
 
   useEffect(() => {
-    setIconCount(900);
+    const frame = requestAnimationFrame(() => setIconCount(900));
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
